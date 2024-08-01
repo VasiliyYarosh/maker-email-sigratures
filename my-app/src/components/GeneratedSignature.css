@@ -1,0 +1,106 @@
+.container-global {
+    display: flex;
+    /* outline: 2px solid yellow; */
+    height: 70vh;
+    gap: 10vw;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* outline: 1px solid red; */
+}
+
+
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* outline: 1px solid green; */
+    /* border: 2px solid black; */
+}
+
+.table-border {
+    border: 2px solid black; 
+    padding: 40px;
+}
+
+.float-labels {
+    transition-property: top, font-size, line-height;
+    transition-duration: 150ms;
+    pointer-events: none;
+    transition-timing-function: linear;
+  }
+
+  * {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: #83c5be; */
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .fancy {
+    position: relative;
+    width: 370px;
+    height: 70px;
+    max-width: 100%;
+    background: #edf6f9;
+    border-radius: 50px;
+    overflow: hidden;
+    --offset: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .fancy::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    background: conic-gradient(transparent 180deg, #006d77, #006d77);
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    animation: rotate 7s linear infinite;
+  }
+  
+  .fancy::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 2 * var(--offset));
+    height: calc(100% - 2 * var(--offset));
+    inset: var(--offset);
+    background: inherit;
+    border-radius: inherit;
+  }
+  
+  .fancy input {
+    position: absolute;
+    color: #006d77;
+    background: transparent;
+    font-size: 1rem;
+    inset: 0;
+    padding: 1.5rem;
+    z-index: 10;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+    }
+  }

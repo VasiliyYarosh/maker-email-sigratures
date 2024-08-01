@@ -4,7 +4,7 @@ import GeneratedSignature from "./GeneratedSignature"
 function InputForm() {
     return (
         <div className="App">
-            <h2>Введіть ваші даня для створення підпису</h2>
+            <h2 style={{textAlign: 'center'}}>Введіть ваші даня для створення підпису</h2>
             <div className="gap-container">
                 <div >
                     <GeneratedSignature />

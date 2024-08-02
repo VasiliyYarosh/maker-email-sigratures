@@ -6,18 +6,19 @@ import "./GeneratedSignature.css";
 
 
 function GeneratedSignature() {
-    const [name, setName] = useState('Тестовий Орнест');
-    const [title, setTitle] = useState('Бухгалтер');
-    const [department, setDepartment] = useState('Фінансовий департамент');
+    const [name, setName] = useState('');
+    const [title, setTitle] = useState('');
+    const [department, setDepartment] = useState('');
     const [phone, setPhone] = useState('+380');
-    const [email, setEmail] = useState('t.ornest@bgv.com.ua');
-    const [website, setWebsite] = useState('https://bgv.org');
+    const [email, setEmail] = useState('');
+    const [website, setWebsite] = useState('https://bgv.com.ua');
     const [address, setAddress] = useState('01011, м.Київ, вул. Панаса Мирного, 6');
     const [selectedImage, setSelectedImage] = useState('image1');
+    const [showMoreFields, setShowMoreFields] = useState(false);
 
     const images = {
         image1: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
-        image2: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
+        image2: 'https://bgvfund.org/wp-content/uploads/2024/08/лого.jpg',
         image3: 'https://bgvfund.org/wp-content/uploads/2024/08/logo-BGV_charity_fund-icon-RGB.jpg',
         image4: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
     };
@@ -41,7 +42,7 @@ function GeneratedSignature() {
         }
         return phone;
     };
-    
+
 
     const copyToClipboard = () => {
         const signature = document.getElementById('signature-content');
@@ -63,9 +64,11 @@ function GeneratedSignature() {
     return (
         <div className='container-global'>
             <div className='input-container'>
+                 <label for='company' style={{textAlign: 'center'}}>Оберіть компанію</label>
                 <div className="container">
+                   
                     <div className="select">
-                        <select value={selectedImage} onChange={handleImageChange}>
+                        <select id='company' value={selectedImage} onChange={handleImageChange}>
                             <option value="image1">BGV Group Managament V1</option>
                             <option value="image2">BGV Group Managament V2</option>
                             <option value="image3">BGV Charity Fund</option>
@@ -73,27 +76,39 @@ function GeneratedSignature() {
                         </select>
                     </div>
                 </div>
+                <label htmlFor='name'>Вкажіть Ім'я та Фамілію</label>
                 <div className="fancy">
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ім'я" />
+                    <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Ім'я Фамілія" />
                 </div>
+                <label htmlFor='title'>Вкажіть посаду</label>
                 <div className="fancy">
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Посада" />
+                    <input type="text" id='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Посада" />
                 </div>
+                <label htmlFor='department'>Вкажіть департамент</label>
                 <div className="fancy">
-                    <input type="text" value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Департамент" />
+                    <input type="text" id='department' value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Департамент" />
                 </div>
+                <label htmlFor='phone'>Вкажіть телефон</label>
                 <div className="fancy">
-                    <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Телефон" />
+                    <input type="text" id='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Телефон" />
                 </div>
+                <label htmlFor='email'>Вкажіть Email</label>
                 <div className="fancy">
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                    <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                 </div>
-                <div className="fancy">
-                    <input type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Веб-сайт" />
-                </div>
-                <div className="fancy">
-                    <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Адреса" />
-                </div>
+                <button class="button-paper" onClick={() => setShowMoreFields(!showMoreFields)}>
+                    {showMoreFields ? 'Менше параметрів' : 'Більше параметрів'}
+                </button>
+                {showMoreFields && (
+                    <>
+                        <div className="fancy">
+                            <input type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Веб-сайт" />
+                        </div>
+                        <div className="fancy">
+                            <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Адреса" />
+                        </div>
+                    </>
+                )}
             </div>
 
             <div className='table-container'>
@@ -110,7 +125,7 @@ function GeneratedSignature() {
                                         </p>
                                     </td>
                                     <td style={{ padding: '0cm', verticalAlign: 'top', width: '9cm', height: '69.2pt' }}>
-                                        <div style={{ padding: '0cm', borderBottom: "1pt solid rgb(25, 25, 25)" }}>
+                                        <div style={{ padding: '0cm', borderBottom: "1px solid rgb(25, 25, 25)" }}>
                                             <p style={{ marginBottom: '2px', padding: '0' }}>
                                                 <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '10pt', color: 'rgb(68, 68, 68)' }}><b>{name} | &nbsp;</b></span>
                                                 <span style={{ letterSpacing: '-0.2pt', fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)' }}>{title}</span>
@@ -120,54 +135,59 @@ function GeneratedSignature() {
                                             <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', paddingBottom: "10px" }}>
                                                 <b>{department}</b>
                                             </span>
-                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
-                                                <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><br />
+                                            <br></br>
+                                            
+                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', width: "15px" }}>
+                                                
                                                 <img
                                                     src="https://img.icons8.com/ios/50/000000/phone--v1.png"
                                                     alt="phone-icon"
                                                     width="10"
                                                     height="10"
-                                                    style={{ width: '13px', height: '13px', marginTop: '0px', marginBottom: '0px' }}
+                                                    style={{ width: '13px', height: '13px', margin: '0px', padding: '0px' }}
                                                 />
-                                            </span>&nbsp;
-                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', lineHeight: '5px' }}>
-                                                &nbsp;{formatPhone(phone)}
+                                                {/* {formatPhone(phone)} */}
                                             </span>
-                                            <span
-                                                style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)' }}><br /></span>
-                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)' }}>
+                                            <span style={{fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
+                                            &nbsp;&nbsp;{formatPhone(phone)}
+                                            </span>
+                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)' }}><br /></span>
+                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', }}>
                                                 <img
                                                     src="https://img.icons8.com/ios/50/new-post--v1.png"
                                                     alt="email-icon"
                                                     width="10"
                                                     height="10"
-                                                    style={{ width: '13px', height: '13px', marginTop: '0px', marginBottom: '0px' }}
+                                                    style={{ width: '13px', height: '13px', margin: '0px',marginRight: '2px', padding: '0px' }}
                                                 />
-                                            </span>&nbsp;
-                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(5, 99, 193)', lineHeight: '5px' }}>
+                                            </span>
+                                            <span style={{ fontFamily: 'Aptos, sans-serif', margin: '0px', padding: '0px', fontSize: '9pt', color: 'rgb(5, 99, 193)', lineHeight: '5px' }}>
+                                            &nbsp;&nbsp;&nbsp;
                                                 <a
                                                     href={`mailto:${email}`}
-                                                    style={{ color: 'rgb(5, 99, 193)', marginTop: '0px', marginBottom: '0px', marginLeft: '2px', textDecoration: "none" }}
+                                                    style={{color: 'rgb(5, 99, 193)', textDecoration: 'none', margin: '0px', padding: '0px' }}
                                                 >{email}</a>
                                             </span>
                                             <br />
                                             <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)', lineHeight: '5px' }}></span>
-                                            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)', lineHeight: '5px' }}>
+                                            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)', lineHeight: '5px', width: "15px" }}>
                                                 <img
                                                     src="https://img.icons8.com/ios/50/internet--v1.png"
                                                     alt="website-icon"
                                                     width="10"
                                                     height="10"
-                                                    style={{ width: '14px', height: '13px', marginTop: '0px', marginBottom: '0px' }}
-                                                /></span>&nbsp;
-                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(5, 99, 193)', lineHeight: '5px' }}>
+                                                    style={{ width: '14px', height: '13px', margin: '0px', padding: '0px' }}
+                                                />
+                                            </span>
+                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(5, 99, 193)', lineHeight: '5px'}}>
+                                                &nbsp;&nbsp;&nbsp;
                                                 <a
                                                     href={website}
-                                                    style={{ color: 'rgb(5, 99, 193)', textDecoration: 'none' }}
+                                                    style={{fontFamily: 'Aptos, sans-serif', fontSize: '9pt', lineHeight: '5px' , color: 'rgb(5, 99, 193)', textDecoration: 'none', margin: '0px', padding: '0px' }}
                                                 >{website.replace(/^https?:\/\//, '')}</a>
                                             </span>
                                             <br />
-                                            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
+                                            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', width: "15px" }}>
                                                 <img
                                                     src="https://img.icons8.com/ios/50/address--v1.png"
                                                     alt="address-icon"
@@ -175,9 +195,9 @@ function GeneratedSignature() {
                                                     height="10"
                                                     style={{ width: '13px', height: '13px', marginTop: '0px', marginBottom: '0px' }}
                                                 />
-                                            </span>&nbsp;
-                                            <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', lineHeight: '5px' }}>
-                                                &nbsp;{address}
+                                            </span>
+                                            <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
+                                            &nbsp;&nbsp;{address}
                                             </span>
                                         </p>
                                     </td>
@@ -187,7 +207,7 @@ function GeneratedSignature() {
                         <table style={{ width: '350.7pt', borderCollapse: 'collapse', borderSpacing: '0px', boxSizing: 'border-box' }}>
                             <tbody>
                                 <tr>
-                                    <td style={{ borderTop: "1pt solid rgb(25, 25, 25)", padding: "0cm", width: "350.7pt", height: "4.15pt", padding: '2px' }}>
+                                    <td style={{ borderTop: "1pt solid rgb(25, 25, 25)", width: "350.7pt", height: "4.15pt", padding: '2px' }}>
                                         <p style={{ fontFamily: 'Aptos, sans-serif', fontSize: "6pt", color: "gray", lineHeight: '8px' }}>
                                             Інформація, що міститься в цьому повідомленні, включаючи будь-які вкладення до нього, є конфіденційною.
                                             Якщо ви не є одержувачем, будь ласка, не копіюйте. Використовувати або розкривати це повідомлення будь-кому,
@@ -200,7 +220,7 @@ function GeneratedSignature() {
                         </table>
                     </div>
                 </div>
-                <button onClick={copyToClipboard} class="button-paper" role="button">Копіювати підпис</button>
+                <button onClick={copyToClipboard} class="button-paper" >Копіювати підпис</button>
                 <div className='table-instruction'>
                     <a href='https://google.com' target='blank'>Відео інструкція зі встановлення email підпису для "Десктопної" версії.</a>
                     <a href='https://google.com' target='blank'>Відео інструкція зі встановлення email підпису "Web" версії.</a>

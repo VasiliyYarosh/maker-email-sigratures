@@ -222,8 +222,8 @@ function GeneratedSignature() {
                 </div>
                 <button onClick={copyToClipboard} class="button-paper" >Копіювати підпис</button>
                 <div className='table-instruction'>
-                    <a href='https://google.com' target='blank'>Відео інструкція зі встановлення email підпису для "Десктопної" версії.</a>
-                    <a href='https://google.com' target='blank'>Відео інструкція зі встановлення email підпису "Web" версії.</a>
+                    <a href='https://bgvgm-my.sharepoint.com/:v:/g/personal/v_yarosh_bgv_com_ua/EWgMWF2uN1NMo_nZnsJdS74BKK84ah-FkDLRxD98jf_8qg?e=xJdFAl' target='blank'>Відео інструкція зі встановлення email підпису для "Десктопної" версії.</a>
+                    <a href='https://bgvgm-my.sharepoint.com/:v:/g/personal/v_yarosh_bgv_com_ua/EVD1PdMJqCtFiEs3BL9tjygBodkLXz8NLQV5-MLQ3itfTw?e=2BaHGS' target='blank'>Відео інструкція зі встановлення email підпису "Web" версії.</a>
                 </div>
             </div>
             <ToastContainer />

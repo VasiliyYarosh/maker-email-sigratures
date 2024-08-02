@@ -77,9 +77,9 @@ function GeneratedSignature() {
                         </select>
                     </div>
                 </div>
-                <label htmlFor='name'>Вкажіть Ім'я та Фамілію</label>
+                <label htmlFor='name'>Вкажіть ім'я та прізвище</label>
                 <div className="fancy">
-                    <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Ім'я Фамілія" />
+                    <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Вкажіть ім'я та прізвище" />
                 </div>
                 <label htmlFor='title'>Вкажіть посаду</label>
                 <div className="fancy">
@@ -210,7 +210,7 @@ function GeneratedSignature() {
                                 <tr>
                                     <td style={{ borderTop: "1pt solid rgb(25, 25, 25)", width: "350.7pt", height: "4.15pt", padding: '2px' }}>
                                         <p style={{ fontFamily: 'Aptos, sans-serif', fontSize: "6pt", color: "gray", lineHeight: '8px' }}>
-                                        Інформація, що міститься в цьому повідомленні, включаючи будь-які додатки до нього, є конфіденційною. Якщо ви не є призначеним одержувачем, будь ласка, не копіюйте, не використовуйте та не розголошуйте це повідомлення нікому, натомість сповістіть відправника, відправника, відповівши на це повідомлення, а потім видаліть повідомлення зі своєї системи.
+                                        Інформація, що міститься в цьому повідомленні, включаючи будь-які додатки до нього, є конфіденційною. Якщо ви не є призначеним одержувачем, будь ласка, не копіюйте, не використовуйте та не розголошуйте це повідомлення нікому, натомість сповістіть відправника, відповівши на це повідомлення, а потім видаліть повідомлення зі своєї системи.
                                         </p>
                                     </td>
                                     <td></td>

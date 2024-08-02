@@ -58,6 +58,22 @@
   position: relative;
 }
 
+.mobile-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media screen and (min-width: 1000px){
+  .mobile-message {
+    display: none;
+  }
+}
+
+
 /* arrow */
 
 .arrow-container {

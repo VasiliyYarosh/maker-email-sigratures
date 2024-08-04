@@ -54,8 +54,8 @@
 }
 
 .input-container {
-  height: 100vh;
-  position: relative;
+  /* height: 100vh;
+  position: relative; */
 }
 
 .mobile-message {
@@ -63,7 +63,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  text-align: center;
+  font-size: 10px;
+  height: 80vh;
   width: 100vw;
 }
 

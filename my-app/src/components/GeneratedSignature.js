@@ -3,8 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./GeneratedSignature.css";
 
-
-
 function GeneratedSignature() {
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
@@ -39,6 +37,14 @@ function GeneratedSignature() {
         image4: {
             web: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
             desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-2-1-1.jpg'
+        },
+        image5: {
+            web: 'https://bgvfund.org/wp-content/uploads/2024/08/укрнафтінвест_online.jpg',
+            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/укрнафтінвест_desktop.jpg'
+        },
+        image6: {
+            web: 'https://bgvfund.org/wp-content/uploads/2024/08/karier_web.jpg',
+            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/karier_desktop.jpg'
         }
     };
 
@@ -46,7 +52,9 @@ function GeneratedSignature() {
         image1: 'https://bgv.com.ua',
         image2: 'https://bgv.com.ua',
         image3: 'https://bgvfund.org',
-        image4: 'https://www.bgv-graphite.com.ua'
+        image4: 'https://www.bgv-graphite.com.ua',
+        image5: 'https://ukrnaftinvest.com.ua',
+        image6: 'https://www.gran-karier.com.ua',
     };
 
     useEffect(() => {
@@ -107,16 +115,8 @@ function GeneratedSignature() {
     return (
         <>
             <div className='container-global'>
-                <div className='input-container scroll'>
-                    {/* <label htmlFor='language' style={{ textAlign: 'center' }}>Оберіть мову підпису</label>
-                    <div className="container">
-                        <div className="select">
-                            <select id='language' value={language} onChange={handleLanguageChange}>
-                                <option value="ua">Українська</option>
-                                <option value="en">Англійська</option>
-                            </select>
-                        </div>
-                    </div> */}
+                <div className='input-container'>
+
                     <label for='company' style={{ textAlign: 'center' }}>Оберіть компанію</label>
                     <div className="container">
 
@@ -126,29 +126,11 @@ function GeneratedSignature() {
                                 <option value="image2">BGV Group Managament V2</option>
                                 <option value="image3">BGV Charity Fund</option>
                                 <option value="image4">BGV Graphite</option>
+                                <option value="image5">УКРНАФТІНВЕСТ</option>
+                                <option value="image6">ГРАНІТНИЙ КАР'ЄР</option>
                             </select>
                         </div>
 
-                    </div>
-                    <label htmlFor='name'>Вкажіть ім'я та прізвище</label>
-                    <div className="fancy">
-                        <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Вкажіть ім'я та прізвище" />
-                    </div>
-                    <label htmlFor='title'>Вкажіть посаду</label>
-                    <div className="fancy">
-                        <input type="text" id='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Посада" />
-                    </div>
-                    <label htmlFor='department'>Вкажіть департамент</label>
-                    <div className="fancy">
-                        <input type="text" id='department' value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Департамент" />
-                    </div>
-                    <label htmlFor='phone'>Вкажіть телефон</label>
-                    <div className="fancy">
-                        <input type="text" id='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Телефон" />
-                    </div>
-                    <label htmlFor='email'>Вкажіть Email</label>
-                    <div className="fancy">
-                        <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                     </div>
                     <label htmlFor='email'>Підпис для Outlook</label>
                     <div class="container1">
@@ -209,6 +191,27 @@ function GeneratedSignature() {
                             </div>
                         </div>
                     </div>
+                    <label htmlFor='name'>Вкажіть ім'я та прізвище</label>
+                    <div className="fancy">
+                        <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Вкажіть ім'я та прізвище" />
+                    </div>
+                    <label htmlFor='title'>Вкажіть посаду</label>
+                    <div className="fancy">
+                        <input type="text" id='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Посада" />
+                    </div>
+                    <label htmlFor='department'>Вкажіть департамент</label>
+                    <div className="fancy">
+                        <input type="text" id='department' value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Департамент" />
+                    </div>
+                    <label htmlFor='phone'>Вкажіть телефон</label>
+                    <div className="fancy">
+                        <input type="text" id='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Телефон" />
+                    </div>
+                    <label htmlFor='email'>Вкажіть Email</label>
+                    <div className="fancy">
+                        <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                    </div>
+                    
                     <button class="button-paper" onClick={() => setShowMoreFields(!showMoreFields)}>
                         {showMoreFields ? 'Менше параметрів' : 'Більше параметрів'}
                     </button>
@@ -327,7 +330,6 @@ function GeneratedSignature() {
                                     <tr>
                                         <td style={{ borderTop: "1pt solid rgb(25, 25, 25)", width: "350.7pt", height: "4.15pt", padding: '2px' }}>
                                             <p style={{ fontFamily: 'Aptos, sans-serif', fontSize: "6pt", color: "gray", lineHeight: '8px' }}>
-                                                {/* Інформація, що міститься в цьому повідомленні, включаючи будь-які додатки до нього, є конфіденційною. Якщо ви не є призначеним одержувачем, будь ласка, не копіюйте, не використовуйте та не розголошуйте це повідомлення нікому, натомість сповістіть відправника, відповівши на це повідомлення, а потім видаліть повідомлення зі своєї системи. */}
                                                 {language === 'ua' ?
                                                     'Інформація, що міститься в цьому повідомленні, включаючи будь-які додатки до нього, є конфіденційною. Якщо ви не є призначеним одержувачем, будь ласка, не копіюйте, не використовуйте та не розголошуйте це повідомлення нікому, натомість сповістіть відправника, відповівши на це повідомлення, а потім видаліть повідомлення зі своєї системи.' :
                                                     'The information contained in this message, including any attachments, is confidential. If you are not the intended recipient, please do not copy, use, or disclose this message to anyone. Instead, notify the sender by replying to this message, and then delete it from your system.'

@@ -20,26 +20,13 @@ function GeneratedSignature() {
     const [selectedImage, setSelectedImage] = useState('image1');
     const [customImageUrl, setCustomImageUrl] = useState('');
     const [showMoreFields, setShowMoreFields] = useState(false);
-    const [language, setLanguage] = useState('ua');
-    const [platform, setPlatform] = useState('web');
+    const [language, setLanguage] = useState('ua'); // Add state for language
 
     const images = {
-        image1: {
-            web: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
-            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-2-1-1.jpg'
-        },
-        image2: {
-            web: 'https://bgvfund.org/wp-content/uploads/2024/08/лого.jpg',
-            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/лого-1.jpg'
-        },
-        image3: {
-            web: 'https://bgvfund.org/wp-content/uploads/2024/08/logo-BGV_charity_fund-icon-RGB.jpg',
-            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/logo-BGV_charity_fund-icon-RGB-1.jpg'
-        },
-        image4: {
-            web: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
-            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-2-1-1.jpg'
-        }
+        image1: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
+        image2: 'https://bgvfund.org/wp-content/uploads/2024/08/лого.jpg',
+        image3: 'https://bgvfund.org/wp-content/uploads/2024/08/logo-BGV_charity_fund-icon-RGB.jpg',
+        image4: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
     };
 
     const websites = {
@@ -71,13 +58,9 @@ function GeneratedSignature() {
         setSelectedAddress(e.target.value);
     };
 
-    // const handleCustomImageUrlChange = (e) => {
-    //     setCustomImageUrl(e.target.value);
-    //     setSelectedImage('');
-    // };
-
-    const handlePlatformChange = (e) => {
-        setPlatform(e.target.value);
+    const handleCustomImageUrlChange = (e) => {
+        setCustomImageUrl(e.target.value);
+        setSelectedImage('');
     };
 
     const formatPhone = (phone) => {
@@ -107,8 +90,9 @@ function GeneratedSignature() {
     return (
         <>
             <div className='container-global'>
-                <div className='input-container scroll'>
-                    {/* <label htmlFor='language' style={{ textAlign: 'center' }}>Оберіть мову підпису</label>
+                <div className='input-container'>
+                    {/* <Sceleto className="h-[125px] w-[250px] rounded-xl" /> */}
+                    <label htmlFor='language' style={{ textAlign: 'center' }}>Оберіть мову підпису</label>
                     <div className="container">
                         <div className="select">
                             <select id='language' value={language} onChange={handleLanguageChange}>
@@ -116,7 +100,7 @@ function GeneratedSignature() {
                                 <option value="en">Англійська</option>
                             </select>
                         </div>
-                    </div> */}
+                    </div>
                     <label for='company' style={{ textAlign: 'center' }}>Оберіть компанію</label>
                     <div className="container">
 
@@ -128,7 +112,7 @@ function GeneratedSignature() {
                                 <option value="image4">BGV Graphite</option>
                             </select>
                         </div>
-
+                        
                     </div>
                     <label htmlFor='name'>Вкажіть ім'я та прізвище</label>
                     <div className="fancy">
@@ -149,65 +133,6 @@ function GeneratedSignature() {
                     <label htmlFor='email'>Вкажіть Email</label>
                     <div className="fancy">
                         <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-                    </div>
-                    <label htmlFor='email'>Підпис для Outlook</label>
-                    <div class="container1">
-                            <div class="selector">
-                                <div class="selector-item">
-                                    <input 
-                                        type="radio" 
-                                        id="radio1" 
-                                        name="selector" 
-                                        class="selector-item_radio" 
-                                        value="web"
-                                        checked={platform === 'web'}
-                                        onChange={handlePlatformChange}
-                                    />
-                                        <label for="radio1" class="selector-item_label">App Online</label>
-                                </div>
-                                <div class="selector-item">
-                                    <input 
-                                        type="radio" 
-                                        id="radio2" 
-                                        name="selector" 
-                                        class="selector-item_radio"
-                                        value="desktop"
-                                        checked={platform === 'desktop'}
-                                        onChange={handlePlatformChange}
-                                    />
-                                        <label for="radio2" class="selector-item_label">App Desktop</label>
-                                </div>
-
-                            </div>
-                        </div>
-                        <label htmlFor='language-selector'>Оберіть мову підпису</label>
-                    <div className="container1">
-                        <div className="selector">
-                            <div className="selector-item">
-                                <input 
-                                    type="radio" 
-                                    id="radio-language-ua" 
-                                    name="language-selector" 
-                                    className="selector-item_radio" 
-                                    value="ua"
-                                    checked={language === 'ua'}
-                                    onChange={handleLanguageChange}
-                                />
-                                <label htmlFor="radio-language-ua" className="selector-item_label">Українська</label>
-                            </div>
-                            <div className="selector-item">
-                                <input 
-                                    type="radio" 
-                                    id="radio-language-en" 
-                                    name="language-selector" 
-                                    className="selector-item_radio"
-                                    value="en" 
-                                    checked={language === 'en'}
-                                    onChange={handleLanguageChange}
-                                />
-                                <label htmlFor="radio-language-en" className="selector-item_label">Англійська</label>
-                            </div>
-                        </div>
                     </div>
                     <button class="button-paper" onClick={() => setShowMoreFields(!showMoreFields)}>
                         {showMoreFields ? 'Менше параметрів' : 'Більше параметрів'}
@@ -233,24 +158,20 @@ function GeneratedSignature() {
                             <table style={{ width: '350.45pt', borderCollapse: 'collapse', borderSpacing: '0px', boxSizing: 'border-box' }}>
                                 <tbody>
                                     <tr>
-                                        <td style={{ padding: "2px", verticalAlign: 'top', width: '100px', height: '100px' }}>
+                                        <td style={{ padding: '5px 5px 5px 5px', verticalAlign: 'top', width: '100.3pt', height: '69.2pt' }}>
                                             {/* <p align="center" style={{ lineHeight: '12pt', height: "100%" }}> */}
-                                            {/* <img src={customImageUrl || images[selectedImage]} alt="BGV Logo" /> */}
-                                            <img
-                                                src={customImageUrl || images[selectedImage][platform]}
-                                                alt="Company Logo"
-                                            />
+                                                <img src={customImageUrl || images[selectedImage]} alt="BGV Logo" />
                                             {/* </p> */}
                                         </td>
-                                        <td style={{ padding: '0cm', verticalAlign: 'top', width: '9cm', height: '100px' }}>
+                                        <td style={{ padding: '0cm', verticalAlign: 'top', width: '9cm', height: '69.2pt' }}>
                                             <div style={{ padding: '0cm', borderBottom: "1px solid rgb(25, 25, 25)" }}>
                                                 <p style={{ marginBottom: '2px', padding: '0' }}>
-                                                    <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '14pt', color: 'rgb(68, 68, 68)' }}><b>{name} | &nbsp;</b></span>
-                                                    <span style={{ letterSpacing: '-0.2pt', fontFamily: 'Aptos, sans-serif', fontSize: '11pt', color: 'rgb(68, 68, 68)' }}>{title}</span>
+                                                    <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '10pt', color: 'rgb(68, 68, 68)' }}><b>{name} | &nbsp;</b></span>
+                                                    <span style={{ letterSpacing: '-0.2pt', fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)' }}>{title}</span>
                                                 </p>
                                             </div>
                                             <p style={{ marginTop: "0px", marginBottom: "2px" }}>
-                                                <span style={{ fontFamily: 'Aptos, sans-serif', marginBottom: "2px", fontSize: '11pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', paddingBottom: "10px" }}>
+                                                <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', paddingBottom: "10px" }}>
                                                     <b>{department}</b>
                                                 </span>
                                                 <br></br>
@@ -266,7 +187,7 @@ function GeneratedSignature() {
                                                     />
                                                     {/* {formatPhone(phone)} */}
                                                 </span>
-                                                <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
+                                                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
                                                     &nbsp;&nbsp;{formatPhone(phone)}
                                                 </span>
                                                 <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)' }}><br /></span>
@@ -288,7 +209,7 @@ function GeneratedSignature() {
                                                 </span>
                                                 <br />
                                                 <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)', lineHeight: '5px' }}></span>
-                                                <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)', lineHeight: '5px', width: "15px" }}>
+                                                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(202, 41, 41)', lineHeight: '5px', width: "15px" }}>
                                                     <img
                                                         src="https://img.icons8.com/ios/50/internet--v1.png"
                                                         alt="website-icon"
@@ -305,7 +226,7 @@ function GeneratedSignature() {
                                                     >{website.replace(/^https?:\/\//, '')}</a>
                                                 </span>
                                                 <br />
-                                                <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', width: "15px" }}>
+                                                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', width: "15px" }}>
                                                     <img
                                                         src="https://img.icons8.com/ios/50/address--v1.png"
                                                         alt="address-icon"
@@ -314,7 +235,7 @@ function GeneratedSignature() {
                                                         style={{ width: '13px', height: '13px', marginTop: '0px', marginBottom: '0px' }}
                                                     />
                                                 </span>
-                                                <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
+                                                <span style={{ fontFamily: 'Arial, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
                                                     &nbsp;&nbsp;{selectedAddress}
                                                 </span>
                                             </p>

@@ -1,5 +1,5 @@
 import "./InputForm.css";
-import GeneratedSignature from "./GeneratedSignature"
+import GeneratedSignatureUpdateText from "./GeneratedSignature"
 
 function InputForm() {
     return (
@@ -9,7 +9,8 @@ function InputForm() {
             
             <div className="gap-container">
                 <div >
-                    <GeneratedSignature />
+                    {/* <GeneratedSignature /> */}
+                    <GeneratedSignatureUpdateText/>
                 </div> 
                 
             </div>

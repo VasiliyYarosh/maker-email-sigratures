@@ -132,7 +132,7 @@ function GeneratedSignature() {
                         </div>
 
                     </div>
-                    <label htmlFor='email'>Підпис для Outlook</label>
+                    <label htmlFor='email'>Оберіть Outlook</label>
                     <div class="container1">
                             <div class="selector">
                                 <div class="selector-item">
@@ -191,7 +191,7 @@ function GeneratedSignature() {
                             </div>
                         </div>
                     </div>
-                    <label htmlFor='name'>Вкажіть ім'я та прізвище</label>
+                    <label htmlFor='name' style={{marginTop: "20px"}}>Вкажіть ім'я та прізвище</label>
                     <div className="fancy">
                         <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Вкажіть ім'я та прізвище" />
                     </div>

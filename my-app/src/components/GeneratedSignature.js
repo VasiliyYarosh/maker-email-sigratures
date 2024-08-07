@@ -57,32 +57,53 @@ function GeneratedSignature() {
         image6: 'https://www.gran-karier.com.ua',
     };
 
-    useEffect(() => {
-        if (!selectedAddress) {
-            setSelectedAddress(address[language]);
+    const addresses = {
+        image1: {
+            ua: '01011, м.Київ, вул. Панаса Мирного, 6',
+            en: '01011, Kyiv, Panasa Myrnoho St, 6'
+        },
+        image2: {
+            ua: '01011, м.Київ, вул. Панаса Мирного, 6',
+            en: '01011, Kyiv, Panasa Myrnoho St, 6'
+        },
+        image3: {
+            ua: '01011, м.Київ, вул. Панаса Мирного, 6',
+            en: '01011, Kyiv, Panasa Myrnoho St, 6'
+        },
+        image4: {
+            ua: '01011, м.Київ, вул. Панаса Мирного, 6',
+            en: '01011, Kyiv, Panasa Myrnoho St, 6'
+        },
+        image5: {
+            ua: '01011, м.Київ, вул. Панаса Мирного 6, оф. 401',
+            en: '01011, Kyiv, Panasa Myrnoho St, 6, office 401'
+        },
+        image6: {
+            ua: 'Житомирська область, м. Коростень, вул. Шевченка, 8',
+            en: 'Zhytomyr region, Korosten, Shevchenka St, 8'
         }
-    }, [language]);
+    };
+
+    useEffect(() => {
+        setSelectedAddress(addresses[selectedImage][language]);
+    }, [language, selectedImage]);
 
     const handleImageChange = (e) => {
         const selected = e.target.value;
         setSelectedImage(selected);
         setWebsite(websites[selected]);
+        setSelectedAddress(addresses[selected][language]);
         setCustomImageUrl('');
     };
 
     const handleLanguageChange = (e) => {
         setLanguage(e.target.value);
-        setSelectedAddress(address[e.target.value]);
+        setSelectedAddress(addresses[selectedImage][e.target.value]);
     };
 
     const handleAddressChange = (e) => {
         setSelectedAddress(e.target.value);
     };
-
-    // const handleCustomImageUrlChange = (e) => {
-    //     setCustomImageUrl(e.target.value);
-    //     setSelectedImage('');
-    // };
 
     const handlePlatformChange = (e) => {
         setPlatform(e.target.value);
@@ -111,6 +132,13 @@ function GeneratedSignature() {
 
         window.getSelection().removeAllRanges();
     };
+
+    // const handleCustomImageUrlChange = (e) => {
+    //     setCustomImageUrl(e.target.value);
+    //     setSelectedImage('');
+    // };
+
+
 
     return (
         <>
@@ -222,7 +250,12 @@ function GeneratedSignature() {
                                     <input type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Веб-сайт" />
                                 </div>
                                 <div className="fancy">
-                                    <input type="text" value={selectedAddress} onChange={handleAddressChange} placeholder={language === 'ua' ? 'Адреса' : 'Address'} />
+                                    <input 
+                                        type="text" 
+                                        value={selectedAddress} 
+                                        onChange={handleAddressChange} 
+                                        placeholder={language === 'ua' ? 'Адреса' : 'Address'}
+                                    />
                                 </div>
                                 {/* <div className="fancy">
                                     <input type="text" value={customImageUrl} onChange={handleCustomImageUrlChange} placeholder="URL зображення" />

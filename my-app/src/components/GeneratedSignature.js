@@ -35,8 +35,8 @@ function GeneratedSignature() {
             desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/logo-BGV_charity_fund-icon-RGB-1.jpg'
         },
         image4: {
-            web: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-1.jpg',
-            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/BGV_group-logo-RGB-1_full_slogan-2-1-1.jpg'
+            web: 'https://bgvfund.org/wp-content/uploads/2024/08/image.jpg',
+            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/image-1.jpg'
         },
         image5: {
             web: 'https://bgvfund.org/wp-content/uploads/2024/08/укрнафтінвест_online.jpg',
@@ -115,121 +115,122 @@ function GeneratedSignature() {
     return (
         <>
             <div className='container-global'>
-                <div className='input-container'>
+                <div className='input-scroll'>
+                    <div className='input-container'>
 
-                    <label for='company' style={{ textAlign: 'center' }}>Оберіть компанію</label>
-                    <div className="container">
+                        <label for='company' style={{ textAlign: 'center', marginTop: "1vh" }}>Оберіть компанію</label>
+                        <div className="container">
 
-                        <div className="select">
-                            <select id='company' value={selectedImage} onChange={handleImageChange}>
-                                <option value="image1">BGV Group Managament V1</option>
-                                <option value="image2">BGV Group Managament V2</option>
-                                <option value="image3">BGV Charity Fund</option>
-                                <option value="image4">BGV Graphite</option>
-                                <option value="image5">УКРНАФТІНВЕСТ</option>
-                                <option value="image6">ГРАНІТНИЙ КАР'ЄР</option>
-                            </select>
+                            <div className="select">
+                                <select id='company' value={selectedImage} onChange={handleImageChange}>
+                                    <option value="image1">BGV Group Managament V1</option>
+                                    <option value="image2">BGV Group Managament V2</option>
+                                    <option value="image3">BGV Charity Fund</option>
+                                    <option value="image4">BGV Graphite</option>
+                                    <option value="image5">УКРНАФТІНВЕСТ</option>
+                                    <option value="image6">ГРАНІТНИЙ КАР'ЄР</option>
+                                </select>
+                            </div>
+
                         </div>
-
-                    </div>
-                    <label htmlFor='email'>Оберіть Outlook</label>
-                    <div class="container1">
+                        <label htmlFor='email'>Оберіть Outlook</label>
+                        <div class="container1">
                             <div class="selector">
                                 <div class="selector-item">
-                                    <input 
-                                        type="radio" 
-                                        id="radio1" 
-                                        name="selector" 
-                                        class="selector-item_radio" 
+                                    <input
+                                        type="radio"
+                                        id="radio1"
+                                        name="selector"
+                                        class="selector-item_radio"
                                         value="web"
                                         checked={platform === 'web'}
                                         onChange={handlePlatformChange}
                                     />
-                                        <label for="radio1" class="selector-item_label">App Online</label>
+                                    <label for="radio1" class="selector-item_label">App Online</label>
                                 </div>
                                 <div class="selector-item">
-                                    <input 
-                                        type="radio" 
-                                        id="radio2" 
-                                        name="selector" 
+                                    <input
+                                        type="radio"
+                                        id="radio2"
+                                        name="selector"
                                         class="selector-item_radio"
                                         value="desktop"
                                         checked={platform === 'desktop'}
                                         onChange={handlePlatformChange}
                                     />
-                                        <label for="radio2" class="selector-item_label">App Desktop</label>
+                                    <label for="radio2" class="selector-item_label">App Desktop</label>
                                 </div>
 
                             </div>
                         </div>
                         <label htmlFor='language-selector'>Оберіть мову підпису</label>
-                    <div className="container1">
-                        <div className="selector">
-                            <div className="selector-item">
-                                <input 
-                                    type="radio" 
-                                    id="radio-language-ua" 
-                                    name="language-selector" 
-                                    className="selector-item_radio" 
-                                    value="ua"
-                                    checked={language === 'ua'}
-                                    onChange={handleLanguageChange}
-                                />
-                                <label htmlFor="radio-language-ua" className="selector-item_label">Українська</label>
-                            </div>
-                            <div className="selector-item">
-                                <input 
-                                    type="radio" 
-                                    id="radio-language-en" 
-                                    name="language-selector" 
-                                    className="selector-item_radio"
-                                    value="en" 
-                                    checked={language === 'en'}
-                                    onChange={handleLanguageChange}
-                                />
-                                <label htmlFor="radio-language-en" className="selector-item_label">Англійська</label>
+                        <div className="container1">
+                            <div className="selector">
+                                <div className="selector-item">
+                                    <input
+                                        type="radio"
+                                        id="radio-language-ua"
+                                        name="language-selector"
+                                        className="selector-item_radio"
+                                        value="ua"
+                                        checked={language === 'ua'}
+                                        onChange={handleLanguageChange}
+                                    />
+                                    <label htmlFor="radio-language-ua" className="selector-item_label">Українська</label>
+                                </div>
+                                <div className="selector-item">
+                                    <input
+                                        type="radio"
+                                        id="radio-language-en"
+                                        name="language-selector"
+                                        className="selector-item_radio"
+                                        value="en"
+                                        checked={language === 'en'}
+                                        onChange={handleLanguageChange}
+                                    />
+                                    <label htmlFor="radio-language-en" className="selector-item_label">Англійська</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <label htmlFor='name' style={{marginTop: "20px"}}>Вкажіть ім'я та прізвище</label>
-                    <div className="fancy">
-                        <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Вкажіть ім'я та прізвище" />
-                    </div>
-                    <label htmlFor='title'>Вкажіть посаду</label>
-                    <div className="fancy">
-                        <input type="text" id='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Посада" />
-                    </div>
-                    <label htmlFor='department'>Вкажіть департамент</label>
-                    <div className="fancy">
-                        <input type="text" id='department' value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Департамент" />
-                    </div>
-                    <label htmlFor='phone'>Вкажіть телефон</label>
-                    <div className="fancy">
-                        <input type="text" id='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Телефон" />
-                    </div>
-                    <label htmlFor='email'>Вкажіть Email</label>
-                    <div className="fancy">
-                        <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-                    </div>
-                    
-                    <button class="button-paper" onClick={() => setShowMoreFields(!showMoreFields)}>
-                        {showMoreFields ? 'Менше параметрів' : 'Більше параметрів'}
-                    </button>
-                    {showMoreFields && (
-                        <>
-                            <div className="fancy">
-                                <input type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Веб-сайт" />
-                            </div>
-                            <div className="fancy">
-                                <input type="text" value={selectedAddress} onChange={handleAddressChange} placeholder={language === 'ua' ? 'Адреса' : 'Address'} />
-                            </div>
-                            {/* <div className="fancy">
-                                <input type="text" value={customImageUrl} onChange={handleCustomImageUrlChange} placeholder="URL зображення" />
-                             </div> */}
-                        </>
-                    )}
-                </div>
+                        <label htmlFor='name' style={{ marginTop: "20px" }}>Вкажіть ім'я та прізвище</label>
+                        <div className="fancy">
+                            <input type="text" id='name' value={name} onChange={(e) => setName(e.target.value)} placeholder="Вкажіть ім'я та прізвище" />
+                        </div>
+                        <label htmlFor='title'>Вкажіть посаду</label>
+                        <div className="fancy">
+                            <input type="text" id='title' value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Посада" />
+                        </div>
+                        <label htmlFor='department'>Вкажіть департамент</label>
+                        <div className="fancy">
+                            <input type="text" id='department' value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Департамент" />
+                        </div>
+                        <label htmlFor='phone'>Вкажіть телефон</label>
+                        <div className="fancy">
+                            <input type="text" id='phone' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Телефон" />
+                        </div>
+                        <label htmlFor='email'>Вкажіть Email</label>
+                        <div className="fancy">
+                            <input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+                        </div>
 
+                        <button class="button-paper" onClick={() => setShowMoreFields(!showMoreFields)}>
+                            {showMoreFields ? 'Менше параметрів' : 'Більше параметрів'}
+                        </button>
+                        {showMoreFields && (
+                            <>
+                                <div className="fancy">
+                                    <input type="text" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Веб-сайт" />
+                                </div>
+                                <div className="fancy">
+                                    <input type="text" value={selectedAddress} onChange={handleAddressChange} placeholder={language === 'ua' ? 'Адреса' : 'Address'} />
+                                </div>
+                                {/* <div className="fancy">
+                                    <input type="text" value={customImageUrl} onChange={handleCustomImageUrlChange} placeholder="URL зображення" />
+                                </div> */}
+                            </>
+                        )}
+                    </div>
+                </div>
                 <div className='table-container'>
                     <div className='table-border'>
                         <div id="signature-content">
@@ -237,13 +238,10 @@ function GeneratedSignature() {
                                 <tbody>
                                     <tr>
                                         <td style={{ padding: "2px", verticalAlign: 'top', width: '100px', height: '100px' }}>
-                                            {/* <p align="center" style={{ lineHeight: '12pt', height: "100%" }}> */}
-                                            {/* <img src={customImageUrl || images[selectedImage]} alt="BGV Logo" /> */}
                                             <img
                                                 src={customImageUrl || images[selectedImage][platform]}
                                                 alt="Company Logo"
                                             />
-                                            {/* </p> */}
                                         </td>
                                         <td style={{ padding: '0cm', verticalAlign: 'top', width: '9cm', height: '100px' }}>
                                             <div style={{ padding: '0cm', borderBottom: "1px solid rgb(25, 25, 25)" }}>
@@ -259,7 +257,6 @@ function GeneratedSignature() {
                                                 <br></br>
 
                                                 <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px', width: "15px" }}>
-
                                                     <img
                                                         src="https://img.icons8.com/ios/50/000000/phone--v1.png"
                                                         alt="phone-icon"
@@ -267,7 +264,6 @@ function GeneratedSignature() {
                                                         height="10"
                                                         style={{ width: '13px', height: '13px', margin: '0px', padding: '0px' }}
                                                     />
-                                                    {/* {formatPhone(phone)} */}
                                                 </span>
                                                 <span style={{ fontFamily: 'Aptos, sans-serif', fontSize: '9pt', color: 'rgb(68, 68, 68)', lineHeight: '5px' }}>
                                                     &nbsp;&nbsp;{formatPhone(phone)}

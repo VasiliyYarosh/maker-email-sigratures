@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 .App {
-  /* text-align: center; */
   font-family: "Roboto Mono", monospace;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -16,10 +10,8 @@
   }
 }
 
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,96 +35,18 @@
   }
 }
 
-
-.video-container {
-  /* outline: 1px solid red; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-
-.input-container {
-  /* height: 100vh;
-  position: relative; */
-}
-
 .mobile-message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 50px;
   font-size: 10px;
-  height: 80vh;
-  width: 100vw;
 }
 
 @media screen and (min-width: 1000px){
   .mobile-message {
     display: none;
-  }
-}
-
-
-/* arrow */
-
-.arrow-container {
-
-
-
-}
-
-.arrow {
-
-  opacity: 0;
-  position: absolute;
-      left: 50%;
-      top: 50%;
-  transform-origin: 50% 50%;
-  transform: translate3d(-50%, -50%, 0);
-}
-
-.arrow-first {
-  animation: arrow-movement 2s ease-in-out infinite
-}
-
-.arrow-second {
-  animation: arrow-movement 2s 1s ease-in-out infinite;
-}
-
-.arrow:before,
-.arrow:after {
-  background: #545353;
-  content: '';
-  display: block;
-  height: 3px; 
-  position: absolute;
-      bottom: 0;
-      left: 0;
-  width: 30px;
-}
-
-.arrow:before {
-  transform: rotate(45deg) translateX(-23%);
-  transform-origin: top left;
-}
-
-.arrow:after {
-  transform: rotate(-45deg) translateX(23%);
-  transform-origin: top right;
-}
-
-@keyframes arrow-movement {
-  0% { 
-      opacity: 0;
-      top: 45%;
-  }
-  70% {
-      opacity: 1;
-  }
-  100% { 
-      opacity: 0;
   }
 }

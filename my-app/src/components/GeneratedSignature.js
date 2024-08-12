@@ -45,6 +45,10 @@ function GeneratedSignature() {
         image6: {
             web: 'https://bgvfund.org/wp-content/uploads/2024/08/karier_web.jpg',
             desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/karier_desktop.jpg'
+        },
+        image7: {
+            web: 'https://bgvfund.org/wp-content/uploads/2024/08/фк-полісся-1.png',
+            desktop: 'https://bgvfund.org/wp-content/uploads/2024/08/фк-полісся-2.jpg'
         }
     };
 
@@ -55,6 +59,7 @@ function GeneratedSignature() {
         image4: 'https://www.bgv-graphite.com.ua',
         image5: 'https://ukrnaftinvest.com.ua',
         image6: 'https://www.gran-karier.com.ua',
+        image7: 'https://polissyafc.com',
     };
 
     const addresses = {
@@ -81,6 +86,10 @@ function GeneratedSignature() {
         image6: {
             ua: 'Житомирська область, м. Коростень, вул. Шевченка, 8',
             en: 'Zhytomyr region, Korosten, Shevchenka St, 8'
+        },
+        image7: {
+            ua: '10008, м. Житомир, вул. Фещенка-Чопівського, 18.',
+            en: '10008, Zhytomyr, Feshchenko-Chopivskyi St., 18.'
         }
     };
 
@@ -157,6 +166,7 @@ function GeneratedSignature() {
                                     <option value="image4">BGV Graphite</option>
                                     <option value="image5">УКРНАФТІНВЕСТ</option>
                                     <option value="image6">ГРАНІТНИЙ КАР'ЄР</option>
+                                    <option value="image7">ФК «Полісся»</option>
                                 </select>
                             </div>
 
